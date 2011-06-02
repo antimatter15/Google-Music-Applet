@@ -1,0 +1,118 @@
+body{
+    font-family: 'Droid Sans', arial,serif;
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+    height: 115px;
+    background-image: url('../images/dark_gray_tile.jpg');
+}
+
+marquee{
+    padding-bottom: 1px;
+}
+
+#container{
+    width: auto;
+    height: 66px;
+    padding: 0px;
+    margin: 0px;
+    background-image: url('../images/light_gray_tile.jpg');
+    border: solid;
+    border-width: 3px;
+    border-color: #d2732f;
+    overflow: hidden;
+}
+
+    #album_art{
+        width: 60px;
+        height: 60px;
+        float: left;
+        margin: 2px;
+        padding: 0px;
+        background-color: white;
+        background-image: url('../images/art.jpg');
+        border: solid;
+    	border-width: 1px;
+	border-color: black;
+    }
+
+    #track_info{
+	margin: 2px;
+	width: 122px;
+	float: left;
+    }
+    
+        #artist_name{
+        padding: 0px;
+	    height: 20px;
+	    font-weight: bold;
+	    font-size: 14px;	    
+	    overflow: hidden;	
+        }
+        
+        #track_name{
+        padding: 0px;
+	    height: 20px;
+	    font-size: 14px;	    
+	    overflow: hidden;	    
+	    margin-left: auto;
+	    margin-right: auto;
+        }
+        
+        #time_info{
+            margin: 0px;
+            margin-top: 8px;
+            padding: 0px;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        #cur_time{
+            height: 14px;
+            font-size: 12px;
+            padding: 0px;
+            margin: 0px;
+            float: left;
+        }
+        
+        #total_time{
+            height: 14px;
+            font-size: 12px;
+            padding: 0px;
+            margin: 0px;
+            float: left;
+        }
+            
+#previous_track{
+    width: 24px;
+    height: 14px;
+    background-image: url('../images/prev.png');	
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;	
+}
+
+#play_pause{	
+    width: 21px;
+    height: 24px;
+    background-image: url('../images/play.png');	
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 91px;
+}
+
+#next_track{	
+    width: 24px;
+    height: 14px;
+    background-image: url('../images/next.png');	
+    background-repeat: no-repeat;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}   

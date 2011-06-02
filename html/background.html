@@ -1,0 +1,27 @@
+<html>
+    <head>        
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript" src="../js/jquery.marquee.js"></script>
+        <script type="text/javascript" src="../js/background.js"></script>
+        <script type="text/javascript" src="../js/contentscript.js"></script>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="container">
+            <div id="album_art"><img id="art" src="../images/art.jpg" width="60" height="60" /></div>
+            <div id="track_info">
+                <div id="artist_name" class="info"><marquee padding="0" id="artist" scrollamount="2" behavior="alternate" direction="right"></marquee></div>
+                <div id="track_name" class="info"><marquee padding="0" id="track" scrollamount="2" behavior="alternate" direction="right">Play a song</marquee></div>
+                <p id="time_info">
+                    <div id="cur_time" class="info"></div>
+                    <div id="total_time" class="info"></div>
+                </p>
+            </div>
+        </div>
+        <div id="previous_track" onclick="prevTrack()"></div>
+        <div id="play_pause" onclick="playPause()"></div>
+        <div id="next_track" onclick="nextTrack()"></div>    
+    </body>
+
+</html>
