@@ -2,7 +2,7 @@ body{
     font-family: 'Droid Sans', arial,serif;
     margin: 0px;
     padding: 0px;
-    width: 200px;
+    width: 250px;
     height: 115px;
     background-image: url('../images/dark_gray_tile.jpg');
 }
@@ -38,7 +38,7 @@ marquee{
 
     #track_info{
 	margin: 2px;
-	width: 122px;
+	width: 172px;
 	float: left;
     }
     
@@ -85,34 +85,34 @@ marquee{
         }
             
 #previous_track{
-    width: 24px;
-    height: 14px;
+    width: 30px;
+    height: 30px;
     background-image: url('../images/prev.png');	
     background-repeat: no-repeat;
     cursor: pointer;
     position: absolute;
-    bottom: 15px;
-    left: 20px;	
+    bottom: 5px;
+    left: 60px;	
 }
 
 #play_pause{	
-    width: 21px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     background-image: url('../images/play.png');	
     background-repeat: no-repeat;
     cursor: pointer;
     position: absolute;
-    bottom: 10px;
-    left: 91px;
+    bottom: 5px;
+    left: 110px;
 }
 
 #next_track{	
-    width: 24px;
-    height: 14px;
+    width: 30px;
+    height: 30px;
     background-image: url('../images/next.png');	
     background-repeat: no-repeat;
     cursor: pointer;
     position: absolute;
-    bottom: 15px;
-    right: 20px;
+    bottom: 5px;
+    left: 160px;
 }   

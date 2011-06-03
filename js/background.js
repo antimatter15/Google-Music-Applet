@@ -7,7 +7,9 @@ chrome.windows.getAll({populate: true}, function(windows) {
     for (var window = 0; window < windows.length; window++) {
       for (var i = 0; i < windows[window].tabs.length; i++) {
         if (windows[window].tabs[i].url.
-            indexOf('http://music.google.com/music/listen') == 0) {
+            indexOf('http://music.google.com/music/listen') == 0 ||
+            windows[window].tabs[i].url.
+            indexOf('https://music.google.com/music/listen') == 0) {
           callback(windows[window].tabs[i].id)
           return;
         }
