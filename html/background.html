@@ -11,16 +11,18 @@
         <div id="container">
             <div id="album_art"><img id="art" src="../images/art.jpg" width="60" height="60" /></div>
             <div id="track_info">
-                <div id="artist_name" class="info"><marquee padding="0" id="artist" scrollamount="2" behavior="alternate" direction="right"></marquee></div>
-                <div id="track_name" class="info"><marquee padding="0" id="track" scrollamount="2" behavior="alternate" direction="right">Play a song</marquee></div>
+                <div id="artist_name" class="info"><marquee padding="0" id="artist" scrollamount="1" behavior="alternate" direction="left"></marquee></div>
+                <div id="track_name" class="info"><marquee padding="0" id="track" scrollamount="1" behavior="alternate" direction="left">Play a song.</marquee></div>
                 <p id="time_info">
                     <div id="cur_time" class="info"></div>
                     <div id="total_time" class="info"></div>
                 </p>
             </div>
         </div>
+        <div id="shuffle_button" class="shuffle_off" onclick="shuffleClick()"></div>
+        <div id="repeat_button" class="repeat_off" onclick="repeatClick()"></div>
         <div id="previous_track" onclick="prevTrack()"></div>
-        <div id="play_pause" onclick="playPause()"></div>
+        <div id="play_pause" class="play" onclick="playPause()"></div>
         <div id="next_track" onclick="nextTrack()"></div>    
     </body>
 

@@ -1,8 +1,8 @@
 {
     "name": "Google Music Applet",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Lightweight music playback controls and now playing information for Google Music Beta created by Kyle Kamperschroer",
-    "homepage_url" : "https://github.com/kkamperschroer/Google-Music-Applet",
+    "homepage_url" : "https://chrome.google.com/webstore/detail/fjiolbglibkahkipcdgeepdfdgfkdbee?hl=en-US",
 
     "browser_action": {
         "default_icon": "images/icon48.png",

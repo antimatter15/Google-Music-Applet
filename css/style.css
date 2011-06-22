@@ -29,11 +29,10 @@ marquee{
         float: left;
         margin: 2px;
         padding: 0px;
-        background-color: white;
-        background-image: url('../images/art.jpg');
+        background: url('../images/sprite.png') 0px 0px;
         border: solid;
     	border-width: 1px;
-	border-color: black;
+	    border-color: black;
     }
 
     #track_info{
@@ -83,36 +82,144 @@ marquee{
             margin: 0px;
             float: left;
         }
+  
+#shuffle_button{
+    width: 30px;
+    height: 20px;	
+    cursor: pointer;
+    position: absolute;
+    bottom: 12px;
+    left: 2px;	
+    opacity: .1;
+}
+#shuffle_button:hover{
+    background-position: -240px -30px;
+}
+
+.shuffle_off{
+    background: url('../images/sprite.png') -240px 0px;
+}
+.shuffle_on{
+    background: url('../images/sprite.png') -240px -60px;
+}
+
+#repeat_button{
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 12px;
+    right: 2px;	
+    opacity: .1;
+}
+.repeat_off{
+    background: url('../images/sprite.png') -180px 0px;	
+}
+.repeat_off:hover{
+    background-position: -180px -30px;
+}
+.repeat_all{
+    background: url('../images/sprite.png') -180px -60px;	
+}
+.repeat_all:hover{
+    background-position: -180px -30px;
+}
+.repeat_one{
+    background: url('../images/sprite.png') -210px -60px;
+}
+.repeat_one:hover{
+    background-position: -210px -30px;
+}
             
 #previous_track{
     width: 30px;
     height: 30px;
-    background-image: url('../images/prev.png');	
-    background-repeat: no-repeat;
+    background: url('../images/sprite.png') -150px 0px;	
     cursor: pointer;
     position: absolute;
     bottom: 5px;
     left: 60px;	
+    opacity: .1;
+}
+#previous_track:hover{
+    background-position: -150px -30px;
 }
 
 #play_pause{	
     width: 30px;
     height: 30px;
-    background-image: url('../images/play.png');	
-    background-repeat: no-repeat;
     cursor: pointer;
     position: absolute;
     bottom: 5px;
-    left: 110px;
+    left: 112px;
+    opacity: .1;
+}
+
+.play{
+    background: url('../images/sprite.png') -60px 0px;	
+}
+
+.pause{
+    background: url('../images/sprite.png') -90px 0px;	
+}
+
+.play:hover{
+    background-position: -60px -30px;
+}
+
+.pause:hover{
+    background-position: -90px -30px;
 }
 
 #next_track{	
     width: 30px;
     height: 30px;
-    background-image: url('../images/next.png');	
-    background-repeat: no-repeat;
+    background: url('../images/sprite.png') -120px 0px;	
     cursor: pointer;
     position: absolute;
     bottom: 5px;
     left: 160px;
+    opacity: .1;    
 }   
+#next_track:hover{
+    background-position: -120px -30px;
+}
+
+#thumbs_up_button{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 22px;
+    right: 2px;	
+    opacity: .1;
+}  
+#thumbs_up_button:hover{
+    background-position: -270px -30px;
+}
+.thumbs_up_off{
+    background: url('../images/sprite.png') -270px 0px;	
+}
+
+.thumbs_up_on{
+    background: url('../images/sprite.png') -270px -60px;	
+}
+
+#thumbs_down_button{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;	
+    opacity: .1;
+}  
+#thumbs_down_button:hover{
+    background-position: -300px -30px;
+}
+.thumbs_down_off{
+    background: url('../images/sprite.png') -300px 0px;
+}
+.thumbs_down_on{
+    background: url('../images/sprite.png') -300px -60px;
+}

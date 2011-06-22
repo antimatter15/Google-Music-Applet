@@ -1,43 +1,78 @@
 //Listen for messages and respond accordingly.
 chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
-    console.log("contentscript Received a request!");
     if (request.gimme == "play_state"){
-        console.log("in content script. Play state requested.");
-        var return_state = get_play_state();
-        sendResponse({state: "" + return_state});
+        sendResponse({state: get_play_state()});
     }else if (request.gimme == "artist"){
-        console.log("Artist requested...");
         sendResponse({artist: get_artist()});
     }else if (request.gimme == "art"){
-        console.log("Art requested...");
         sendResponse({art: get_album_art()});
     }else if (request.gimme == "track"){
-        console.log("Track requeste...");
         sendResponse({track: get_track()});
     }else if (request.gimme == "cur_time"){
-        console.log("Current time requested...");
         sendResponse({cur_time: get_cur_time()});
     }else if (request.gimme == "total_time"){
-        console.log("Total time requested...");
         sendResponse({total_time: get_total_time()});
-    }
-    else{
-        console.log("not sure what exactly was requested. Returning empty response.");
+    }else if (request.gimme == "shuffle_state"){
+        sendResponse({state: get_shuffle_state()});
+    }else if (request.gimme == "repeat_state"){
+        sendResponse({state: get_repeat_state()});
+    }else if (request.gimme == "thumbs_up_state"){
+        sendResponse({state: get_thumbs_up_state()});
+    }else if (request.gimme == "thumbs_down_state"){
+        sendResponse({state: get_thumbs_down_state()});
+    }else if (request.div && request.cmd){
+        console.log("Got a request: request.div = " + request.div + " and request.cmd = " + request.cmd);
+        var div = $("#" + request.div);
+        console.log("our div is " + div);
+        location.assign('javascript:SJBpost(\"' + request.cmd + '\", ' + div + ');');
+        sendResponse({});
+    }else{
         sendResponse({}); // snub them.
     }
 });
 
 
 function get_play_state(){
-    console.log("in contentscript. get_play_state()");
-    if(($("#playPause").attr("title") == "Pause")){
-        console.log("current state is pause.");
+    if($("#playPause").attr("title") == "Pause"){
         return "Pause";
     }else{
-        console.log("current state is play.");
         return "Play";
     }
+}
+
+function get_shuffle_state(){
+    if($("#shuffle_mode_button").attr("class") == "" || $("#shuffle_mode_button").attr("class") == "on_clicked"){
+        return "Off";
+    }else{
+        return "On";
+    }
+}
+
+function get_repeat_state(){
+    var raw_state = $("#repeat_mode_button").attr("class");
+    if(raw_state == "NO_REPEAT" || raw_state == "SINGLE_REPEAT_CLICKED"){
+        return "Off";
+    }else if(raw_state == "LIST_REPEAT" || raw_state == "NO_REPEAT_CLICKED"){
+        return "All";
+    }else if(raw_state == "SINGLE_REPEAT" || raw_state == "LIST_REPEAT_CLICKED"){
+        return "One";
+    }else
+        return "Off";
+}
+
+function get_thumbs_up_state(){
+    if($("#thumbsUpPlayer").attr("class") == "thumbsUpSelected" || $("#thumbsUpPlayer").attr("class") == "thumbsUpClicked")
+        return "On";
+    else
+        return "Off";
+}
+
+function get_thumbs_down_state(){
+    if($("#thumbsDownPlayer").attr("class") == "thumbsDownSelected" || $("#thumbsDownPlayer").attr("class") == "thumbsDownClicked")
+        return "On";
+    else
+        return "Off";
 }
 
 function get_album_art(){
@@ -59,5 +94,3 @@ function get_cur_time(){
 function get_total_time(){
     return $("#duration").text();
 }
-
-console.log("contentscript_new is up and running!");
