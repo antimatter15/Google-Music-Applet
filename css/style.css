@@ -19,6 +19,8 @@ marquee{
     background-image: url('../images/light_gray_tile.jpg');
     border: solid;
     border-width: 3px;
+    bottom: 0;
+    position: absolute;
     border-color: #d2732f;
     overflow: hidden;
 }
@@ -31,31 +33,31 @@ marquee{
         padding: 0px;
         background: url('../images/sprite.png') 0px 0px;
         border: solid;
-    	border-width: 1px;
-	    border-color: black;
+        border-width: 1px;
+        border-color: black;
     }
 
     #track_info{
-	margin: 2px;
-	width: 172px;
-	float: left;
+    margin: 2px;
+    width: 172px;
+    float: left;
     }
     
         #artist_name{
         padding: 0px;
-	    height: 20px;
-	    font-weight: bold;
-	    font-size: 14px;	    
-	    overflow: hidden;	
+        height: 20px;
+        font-weight: bold;
+        font-size: 14px;        
+        overflow: hidden;   
         }
         
         #track_name{
         padding: 0px;
-	    height: 20px;
-	    font-size: 14px;	    
-	    overflow: hidden;	    
-	    margin-left: auto;
-	    margin-right: auto;
+        height: 20px;
+        font-size: 14px;        
+        overflow: hidden;       
+        margin-left: auto;
+        margin-right: auto;
         }
         
         #time_info{
@@ -85,11 +87,12 @@ marquee{
   
 #shuffle_button{
     width: 30px;
-    height: 20px;	
+    height: 20px;   
     cursor: pointer;
     position: absolute;
-    bottom: 12px;
-    left: 2px;	
+
+    top: 12px;
+    right: 2px; 
     opacity: .1;
 }
 #shuffle_button:hover{
@@ -108,18 +111,19 @@ marquee{
     height: 20px;
     cursor: pointer;
     position: absolute;
-    bottom: 12px;
-    right: 2px;	
+    top: 12px;
+    left: 2px;  
+    
     opacity: .1;
 }
 .repeat_off{
-    background: url('../images/sprite.png') -180px 0px;	
+    background: url('../images/sprite.png') -180px 0px; 
 }
 .repeat_off:hover{
     background-position: -180px -30px;
 }
 .repeat_all{
-    background: url('../images/sprite.png') -180px -60px;	
+    background: url('../images/sprite.png') -180px -60px;   
 }
 .repeat_all:hover{
     background-position: -180px -30px;
@@ -134,33 +138,33 @@ marquee{
 #previous_track{
     width: 30px;
     height: 30px;
-    background: url('../images/sprite.png') -150px 0px;	
+    background: url('../images/sprite.png') -150px 0px; 
     cursor: pointer;
     position: absolute;
-    bottom: 5px;
-    left: 60px;	
+    top: 7px;
+    left: 70px; 
     opacity: .1;
 }
 #previous_track:hover{
     background-position: -150px -30px;
 }
 
-#play_pause{	
+#play_pause{    
     width: 30px;
     height: 30px;
     cursor: pointer;
     position: absolute;
-    bottom: 5px;
+    top: 7px;
     left: 112px;
     opacity: .1;
 }
 
 .play{
-    background: url('../images/sprite.png') -60px 0px;	
+    background: url('../images/sprite.png') -60px 0px;  
 }
 
 .pause{
-    background: url('../images/sprite.png') -90px 0px;	
+    background: url('../images/sprite.png') -90px 0px;  
 }
 
 .play:hover{
@@ -171,14 +175,14 @@ marquee{
     background-position: -90px -30px;
 }
 
-#next_track{	
+#next_track{    
     width: 30px;
     height: 30px;
-    background: url('../images/sprite.png') -120px 0px;	
+    background: url('../images/sprite.png') -120px 0px; 
     cursor: pointer;
     position: absolute;
-    bottom: 5px;
-    left: 160px;
+    top: 7px;
+    left: 150px;
     opacity: .1;    
 }   
 #next_track:hover{
@@ -190,19 +194,19 @@ marquee{
     height: 20px;
     cursor: pointer;
     position: absolute;
-    bottom: 22px;
-    right: 2px;	
+    top: 12px;
+    left: 40px; 
     opacity: .1;
 }  
 #thumbs_up_button:hover{
     background-position: -270px -30px;
 }
 .thumbs_up_off{
-    background: url('../images/sprite.png') -270px 0px;	
+    background: url('../images/sprite.png') -270px 0px; 
 }
 
 .thumbs_up_on{
-    background: url('../images/sprite.png') -270px -60px;	
+    background: url('../images/sprite.png') -270px -60px;   
 }
 
 #thumbs_down_button{
@@ -210,8 +214,8 @@ marquee{
     height: 20px;
     cursor: pointer;
     position: absolute;
-    bottom: 2px;
-    right: 2px;	
+    top: 12px;
+    right: 40px; 
     opacity: .1;
 }  
 #thumbs_down_button:hover{
@@ -223,3 +227,4 @@ marquee{
 .thumbs_down_on{
     background: url('../images/sprite.png') -300px -60px;
 }
+

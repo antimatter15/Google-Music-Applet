@@ -37,7 +37,7 @@ function sendCommand(command, divID) { //using divID was for thumbsUp and down s
           } else {
             var div = null;
             if(divID){
-                console.log("Doing special request...");
+                console.log("Doing special request...", divID);
                 chrome.tabs.sendRequest(tab_id, {div: divID, cmd: command}, function(response){
                     //Ignore the response. SJBPost should have been done in contentscript
                 });
@@ -106,7 +106,7 @@ function UpdateRepeat(state){
         $("#repeat_button").attr("class", "repeat_off");
     }
 }
-/* //Some day we will use Thumbs
+//Some day we will use Thumbs
 function UpdateThumbsUp(state){
     if(state == "On"){
         thumbs_up = true;
@@ -126,7 +126,7 @@ function UpdateThumbsDown(state){
         $("#thumbs_down_button").attr("class", "thumbs_down_off");        
     }
 }
-*/
+
 // Get the play state from a MusicBeta tab and call UpdateIcon with it.
 function UpdateIconFromPageState() {
 FindMusicBetaTab(function(tab_id) {
@@ -140,12 +140,12 @@ FindMusicBetaTab(function(tab_id) {
         chrome.tabs.sendRequest(tab_id, {gimme: "repeat_state"}, function(response){
             UpdateRepeat(response.state);    
         });
-        //chrome.tabs.sendRequest(tab_id, {gimme: "thumbs_up_state"}, function(response){
-        //    UpdateThumbsUp(response.state);    
-        //});
-        //chrome.tabs.sendRequest(tab_id, {gimme: "thumbs_down_state"}, function(response){
-        //    UpdateThumbsDown(response.state);    
-        //});        
+        chrome.tabs.sendRequest(tab_id, {gimme: "thumbs_up_state"}, function(response){
+            UpdateThumbsUp(response.state);    
+        });
+        chrome.tabs.sendRequest(tab_id, {gimme: "thumbs_down_state"}, function(response){
+            UpdateThumbsDown(response.state);    
+        });        
     }
   });
 }

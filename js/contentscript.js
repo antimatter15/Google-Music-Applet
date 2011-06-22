@@ -22,15 +22,23 @@ chrome.extension.onRequest.addListener(
     }else if (request.gimme == "thumbs_down_state"){
         sendResponse({state: get_thumbs_down_state()});
     }else if (request.div && request.cmd){
-        console.log("Got a request: request.div = " + request.div + " and request.cmd = " + request.cmd);
-        var div = $("#" + request.div);
-        console.log("our div is " + div);
-        location.assign('javascript:SJBpost(\"' + request.cmd + '\", ' + div + ');');
+        if(request.cmd == 'thumbsUp' || request.cmd == 'thumbsDown'){
+            trigger_mouse(request.div)
+        }else{      
+            console.log("Got a request: request.div = " + request.div + " and request.cmd = " + request.cmd);
+            var div = $("#" + request.div);
+            console.log("our div is " + div);
+            location.assign('javascript:SJBpost(\"' + request.cmd + '\", ' + div + ');');
+        }
         sendResponse({});
     }else{
         sendResponse({}); // snub them.
     }
 });
+
+function trigger_mouse(element){
+    location.assign("javascript:(function(element){'over,down,up'.split(',').forEach(function(i){var event = document.createEvent('MouseEvents');event.initMouseEvent('mouse'+i, true, true, document.defaultView, 1, 0, 0, 0, 0, false, false, false, false, 0, element);element.dispatchEvent(event)})})(document.getElementById('"+element+"'))");
+}
 
 
 function get_play_state(){
@@ -62,17 +70,11 @@ function get_repeat_state(){
 }
 
 function get_thumbs_up_state(){
-    if($("#thumbsUpPlayer").attr("class") == "thumbsUpSelected" || $("#thumbsUpPlayer").attr("class") == "thumbsUpClicked")
-        return "On";
-    else
-        return "Off";
+    return $("#thumbsUpPlayer").hasClass("goog-flat-button-checked") ? 'On': 'Off';
 }
 
 function get_thumbs_down_state(){
-    if($("#thumbsDownPlayer").attr("class") == "thumbsDownSelected" || $("#thumbsDownPlayer").attr("class") == "thumbsDownClicked")
-        return "On";
-    else
-        return "Off";
+    return $("#thumbsDownPlayer").hasClass("goog-flat-button-checked") ? 'On': 'Off';
 }
 
 function get_album_art(){
